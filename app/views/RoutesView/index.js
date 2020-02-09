@@ -7,6 +7,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import styles from './styles';
 import fetchAllData from '../../api/fetchAllRoutes';
 import { setRoute } from '../../actions/route';
+import { MID_BULE_COLOR } from '../../contants/color'
 
 class RoutesView extends Component {
 	constructor(props) {
@@ -32,11 +33,8 @@ class RoutesView extends Component {
 					isFetching: false,
 				});
 			}
-		} catch (e) {
-
-		}
+		} catch (e) { }
 	};
-
 	renderSpinner = () => {
 		return (
 			<View style={styles.spinner}>
@@ -45,10 +43,14 @@ class RoutesView extends Component {
 		);
 	};
 
+	itemPress = (route) => {
+		this.props.setRoute(route);
+	}
+
 	renderItem = (route) => {
 		return (
-			<TouchableOpacity key={route.id} style={styles.itemContainer} onPress={() => { }}>
-				<Icon name="route" size={30} color="#900" style={styles.icon} />
+			<TouchableOpacity key={route.id} style={styles.itemContainer} onPress={() => this.itemPress(route)}>
+				<Icon name="route" size={30} color={MID_BULE_COLOR} style={styles.icon} />
 				<View>
 					<Text style={styles.routeName}>{route.longName}</Text>
 					<Text style={styles.agencyName}>{route.agencyName}</Text>
@@ -73,9 +75,9 @@ class RoutesView extends Component {
 
 const mapDispatchToProps = dispatch => ({
 	setRoute: route => dispatch(setRoute(route)),
-});;
+});
 
 export default connect(
 	null,
 	mapDispatchToProps,
-)(RoutesView);;
+)(RoutesView);

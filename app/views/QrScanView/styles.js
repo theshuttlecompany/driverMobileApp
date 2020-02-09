@@ -18,4 +18,12 @@ const styles = StyleSheet.create({
 	buttonTouchable: {
 		padding: 16,
 	},
+	spinner: {
+		justifyContent: 'center',
+		alignItems: 'center', // Centered horizontally
+		flex: 1,
+		margin: 10,
+	},
 });
+
+export default styles;
