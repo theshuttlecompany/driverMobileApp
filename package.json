@@ -18,7 +18,7 @@
     "@react-navigation/compat": "^5.0.0",
     "@react-navigation/native": "^5.0.0",
     "react": "16.9.0",
-    "react-native": "0.61.5",
+    "react-native": "0.62.3",
     "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera.git",
     "react-native-gesture-handler": "^1.5.6",
     "react-native-permissions": "^2.0.9",
